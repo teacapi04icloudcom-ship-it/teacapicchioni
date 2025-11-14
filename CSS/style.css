@@ -1,0 +1,96 @@
+body {
+  font-family: "Atkinson Hyperlegible Mono", monospace;
+  color: #000;
+  background-color: #fff;
+}
+
+/* LOGO */
+.logo {
+  max-width: 50px;
+  
+}
+
+/* MENU ICONA */
+.menu-icona {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icona span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.menu-icona:hover span {
+  background-color: #555;
+}
+
+/* TESTI */
+.nome {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.descrizione {
+  font-size: 1.2rem;
+  color: #555;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* FOTO */
+.foto-bn {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nome {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .descrizione {
+    text-align: center;
+  }
+
+  .menu-icona {
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 50px;
+  }
+}
+
+.fotob-1,
+.fotob-2 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.fare, .dove {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.testo-2, .testo-3 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
