@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tea-Capicchioni</title>
+    <title>capicchioni tea</title>
 
     <!-- Bootstrap Grid -->
-    <link rel="stylesheet" href="CSS/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
 
     <!-- Stile personalizzato -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,26 +18,49 @@
 </head>
 
 <body>
-    <main class="container-fluid">
-
-        <!-- Prima riga -->
-        <div class="row align-items-center py-3 px-4">
-            <div class="col-6">
-                <div class="logo-container">
-                    <img src="img/prova_logo.svg" class="logo" alt="Logo">
+    <!-- Header fisso -->
+    <div class="header-fisso">
+        <div class="container-fluid">
+            <div class="row align-items-center py-3 px-4">
+                <div class="col-6 col-md-3">
+                    <div class="logo-container">
+                        <img src="img/prova_logo.svg" class="logo" alt="Logo">
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 text-end">
-                <div class="menu-icona">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                
+                <!-- Menu desktop (visibile solo su schermi grandi) -->
+                <div class="col-md-9 d-none d-md-block">
+                    <nav class="menu-desktop">
+                        <a href="#chi-sono">Chi sono</a>
+                        <a href="#da-dove-vengo">Da dove vengo</a>
+                        <a href="#progetti">Progetti</a>
+                    </nav>
+                </div>
+                
+                <!-- Menu hamburger (visibile solo su mobile) -->
+                <div class="col-6 text-end d-md-none">
+                    <div class="menu-icona" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Menu mobile -->
+        <div class="menu-mobile" id="menu-mobile">
+            <nav>
+                <a href="#chi-sono">Chi sono</a>
+                <a href="#da-dove-vengo">Da dove vengo</a>
+                <a href="#progetti">Progetti</a>
+            </nav>
+        </div>
+    </div>
 
+    <main class="container-fluid">
         <!-- Seconda riga -->
-        <div class="row align-items-center px-4 pb-5">
+        <div class="row align-items-center px-4 pb-5" id="chi-sono">
             <div class="col-md-7 col-12 mt-4 mt-md-0">
                 <p class="nome"><strong>TEA</strong><br><strong>CAPICCHIONI</strong></p>
                 <p class="descrizione">Studentessa di design.</p>
@@ -46,20 +69,22 @@
                 <img src="img/bnfoto.jpg" class="foto-bn" alt="Foto in bianco e nero">
             </div>
         </div>
-        <!-- terza riga -->
-         <div class="row align-items-center px-4 pb-5">
+
+        <!-- Terza riga -->
+        <div class="row align-items-center px-4 pb-5">
             <div class="col-md-7 col-12 mt-4 mt-md-0 order-md-1 order-2">
                 <img src="img/IMG_5896.jpeg" class="fotob-1 img-fluid" alt="foto bosco">
-                </div>
-                <div class="col-md-5 col-12 text-md-start text-center mt-4 mt-md-0 order-md-2 order-1">
+            </div>
+            <div class="col-md-5 col-12 text-md-start text-center mt-4 mt-md-0 order-md-2 order-1">
                 <p class="fare"><strong>Cosa faccio</strong></p>
                 <p class="testo-2">
                 Frequento il secondo anno del corso di laurea in Design presso l'Università degli Studi della Repubblica di San Marino. Il mio percorso formativo è iniziato con studi in ambito tecnico-sanitario, come odontotecnico, esperienza che mi ha permesso di sviluppare capacità manuali.
-                 </p>
-                </div>
+                </p>
             </div>
-        <!-- quarta riga -->
-         <div class="row align-items-center px-4 pb-5">
+        </div>
+
+        <!-- Quarta riga -->
+        <div class="row align-items-center px-4 pb-5" id="da-dove-vengo">
             <div class="col-md-7 col-12 mt-4 mt-md-0">
                 <p class="dove"><strong>Da dove vengo</strong></p>
                 <p class="testo-3">Sono nata e cresciuta nella Repubblica di San Marino, un luogo che, pur essendo piccolo, offre un ambiente stimolante e ricco di ispirazione.</p>
@@ -69,6 +94,151 @@
             </div>
         </div>
 
+        <!-- Quinta riga -->
+        <div class="row align-items-center px-4 pb-5" id="progetti">
+            <div class="col-12 text-center mt-4 mt-md-0">
+                <p class="Progetti"><strong>Progetti</strong></p>
+            </div>
+        </div>
+
+        <!-- Sesta riga -->
+        <div class="row align-items-center px-4 pb-5">
+            <div class="projects-row">
+                <div class="project-card">
+                    <img src="img/DSCF5079 copia.JPG" alt="Chiocciola">
+                    <h3>chiocciola</h3>
+                    <p>
+                    Modellino sulle trasformazioni geometriche, realizzato per il corso di
+                    Geometria.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/paraschiena_one.png" alt="Paraschiena">
+                    <h3>paraschiena</h3>
+                    <p>
+                    Modellino di un paraschiena pensato per sport invernali, realizzato per il
+                    corso di digitale 3D.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/IMG_2938.jpeg" alt="Tramaglio">
+                    <h3>tramaglio</h3>
+                    <p>
+                    Progetto per la realizzazione di un sistema di protezione per un uovo
+                    resistente alle cadute, realizzato per il corso di prodotto.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settima riga -->
+        <div class="row align-items-center px-4 pb-5">
+            <div class="projects-row">
+                <div class="project-card">
+                    <img src="img/manifesto.png" alt="colomba">
+                    <h3>manifesto per la pace</h3>
+                    <p>
+                    Manifesto creato per un invito alla pace.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/Screenshot 2025-10-15 alle 20.43.42.png" alt="gallina">
+                    <h3>illustrazione ricetta</h3>
+                    <p>
+                    Un piccolo leporello che mostra la ricetta per la frittata di patate.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/Screenshot 2025-10-15 alle 20.44.43.png" alt="maniglie">
+                    <h3>illustrazione meccanismo maniglia</h3>
+                    <p>
+                    Un piccolo libricino riguardante le tipologie di maniglie ed il loro funzionamento.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ottava riga -->
+        <div class="row align-items-center px-4 pb-5">
+            <div class="col-md-7 col-12 mt-4 mt-md-0 order-md-1 order-2">
+                <img src="img/IMG_1958.jpeg" class="fotob-1 img-fluid" alt="foto dentatura laterale">
+            </div>
+            <div class="col-md-5 col-12 text-md-start text-center mt-4 mt-md-0 order-md-2 order-1">
+                <p class="fare"><strong>Progetti personali</strong></p>
+                <p class="testo-2">
+                Alcuni dei miei lavori realizzati a tempo perso, in questo caso si tratta di un ponte dentale circolare in cera.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Nona riga -->
+        <div class="row align-items-center px-4 pb-5">
+            <div class="col-md-6 col-12 mt-4 mt-md-0">
+                <img src="img/IMG_1959.jpeg" class="foto-doppia img-fluid" alt="foto dentatura frontale">
+            </div>
+            <div class="col-md-6 col-12 mt-4 mt-md-0">
+                <img src="img/IMG_2355.jpg" class="foto-doppia img-fluid" alt="foto disegno dentiera">
+            </div>
+        </div>
+
+        <!-- Decima riga - Footer -->
+        <div class="row px-4 py-4">
+            <div class="col-12 text-center">
+                <p class="footer-text">@2025 Privacy - Cookies</p>
+            </div>
+        </div>
     </main>
+
+    <script>
+        // Toggle menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuMobile = document.getElementById('menu-mobile');
+        
+        if (menuToggle && menuMobile) {
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                menuMobile.classList.toggle('open');
+            });
+            
+            // Chiudi menu quando si clicca su un link
+            const menuLinks = menuMobile.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    menuMobile.classList.remove('open');
+                });
+            });
+        }
+       </script>
+       <script>
+    // Fade in al scroll
+    const fadeElements = document.querySelectorAll('.row:not(:last-child)'); // Escludi l'ultima row (il footer)
+    
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            // L'elemento è visibile nella viewport
+            if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                element.classList.add('fade-in', 'visible');
+            }
+        });
+    };
+    
+    // Aggiungi la classe fade-in a tutti gli elementi (tranne il footer)
+    fadeElements.forEach(element => {
+        element.classList.add('fade-in');
+    });
+    
+    // Esegui al caricamento e allo scroll
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+    fadeInOnScroll(); // Esegui subito
+</script>
 </body>
 </html>

@@ -2,35 +2,123 @@ body {
   font-family: "Atkinson Hyperlegible Mono", monospace;
   color: #000;
   background-color: #fff;
+  padding-top: 100px;
+  margin: 0;
 }
 
 /* LOGO */
 .logo {
   max-width: 50px;
-  
 }
 
-/* MENU ICONA */
+/* Header fisso */
+.header-fisso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Menu desktop */
+.menu-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+    position: relative;
+    right: 12.5%;
+}
+
+.menu-desktop a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu-desktop a:hover {
+    color: #999;
+}
+
+/* Menu hamburger */
 .menu-icona {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 6px;
-  cursor: pointer;
-  padding: 10px;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.col-6. text-end {
+    margin-right: 0;
 }
 
 .menu-icona span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background-color: #000;
-  transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
-.menu-icona:hover span {
-  background-color: #555;
+.menu-icona.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-icona.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icona.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Menu mobile */
+.menu-mobile {
+    display: none;
+    background-color: #fff;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.menu-mobile.open {
+    display: block;
+}
+
+.menu-mobile nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu-mobile a {
+    text-decoration: none;
+    color: #333;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.menu-mobile a:last-child {
+    border-bottom: none;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 /* TESTI */
@@ -55,33 +143,18 @@ body {
   max-width: 400px;
 }
 
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nome {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .descrizione {
-    text-align: center;
-  }
-
-  .menu-icona {
-    align-items: center;
-  }
-
-  .logo {
-    max-width: 50px;
-  }
-}
-
 .fotob-1,
 .fotob-2 {
   width: 100%;
   height: auto;
   object-fit: cover;
   max-height: 400px;
+}
+
+.foto-doppia {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
 }
 
 .fare, .dove {
@@ -94,3 +167,144 @@ body {
   line-height: 1.6;
 }
 
+/* Progetti */
+.Progetti {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.projects-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-card {
+  width: 100%;
+  font-family: "Atkinson Hyperlegible Mono", monospace;
+}
+
+.project-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.project-card p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  color: #000;
+  font-family: "Atkinson Hyperlegible Mono", monospace; 
+}
+
+/* Footer */
+.footer-text {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nome {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .descrizione {
+    text-align: center;
+  }
+
+  .projects-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+
+/* ANIMAZIONI */
+
+/* Animazione logo all'ingresso */
+.logo {
+  max-width: 50px;
+  animation: logoEntrance 1s ease-out;
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Fade in quando gli elementi entrano nella viewport */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects sulle immagini dei progetti */
+.project-card {
+  width: 100%;
+  font-family: "Atkinson Hyperlegible Mono", monospace;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  overflow: hidden;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Animazione anche per le altre foto */
+.foto-bn,
+.fotob-1,
+.fotob-2,
+.foto-doppia {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.foto-bn:hover,
+.fotob-1:hover,
+.fotob-2:hover,
+.foto-doppia:hover {
+  transform: scale(1.02);
+  filter: brightness(0.95);
+}
